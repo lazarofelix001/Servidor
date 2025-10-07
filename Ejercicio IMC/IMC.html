@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+
+    <h1>Calculadora del Incide de Masa Corporal:</h1>
+
+    <form action="IMC.php" method="get">
+        <label for="Nombre">Nombre</label>
+        <input name="Nombre" maxlength="20" id="Nombre" type="text">
+        <br>
+        <label for="Edad">Edad</label>
+        <input name="Edad" minlength="0" maxlength="130" id="Edad" type="number">
+        <br>
+        <label for="Altura">Altura en centimetros</label>
+        <input name="Altura"id="Altura" type="number" min="50" max="300">
+        <br>
+        <label for="Peso">Peso en KG</label>
+        <input name="Peso"id="Peso" type="number" step="0.01" min="20" max="500">
+        <br>
+        <input type="submit">
+
+
+
+
+
+    </form>
+    
+</body>
+</html>
