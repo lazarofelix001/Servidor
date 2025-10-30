@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pociones</title>
+</head>
+<body>
+    <h1>Realiza tu pocion</h1>
+        <form action="./procesar.php" method="post">
+
+            <fieldset>
+            <legend>Ingredientes Iniciales</legend>
+            <label><input type="checkbox" name="ingredientes[]" value="Ojos_triton"> Ojos_triton</label><br>
+            <label><input type="checkbox" name="ingredientes[]" value="raiz_mandragora"> raiz_mandragora</label><br>
+            <label><input type="checkbox" name="ingredientes[]" value="alas_murcielago"> alas_murcielago</label><br>
+            <label><input type="checkbox" name="ingredientes[]" value="colmillos_serpiente"> colmillos_serpiente</label><br>
+            <label><input type="checkbox" name="ingredientes[]" value="escamas_dragon"> escamas_dragon</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>Base de pocion</legend>
+            <label><input type="radio" name="base" value="base_ajenjo" required> base_ajenjo</label><br>
+            <label><input type="radio" name="base" value="base_lunar"> base_lunar</label><br>
+            <label><input type="radio" name="base" value="base_pantanosa"> base_pantanosa</label><br>
+            <label><input type="radio" name="base" value="base_umbria"> base_umbria</label>
+        </fieldset>
+        <fieldset>
+            <legend>Esencia Arcana</legend>
+            <label><input type="radio" name="esencia" value="esencia_poder" required> esencia_poder</label><br>
+            <label><input type="radio" name="esencia" value="esencia_melancolia"> esencia_melancolia</label><br>
+            <label><input type="radio" name="esencia" value="esencia_precision"> esencia_precision</label><br>
+            <label><input type="radio" name="esencia" value="esencia_somnolienta"> esencia_somnolienta</label>
+        </fieldset>
+        <fieldset>
+            <legend>Metodo de Infusion</legend>
+            <label><input type="radio" name="infusion" value="rayo_tormenta" required> rayo_tormenta</label><br>
+            <label><input type="radio" name="infusion" value="decoccion_alquimica"> decoccion_alquimica</label><br>
+            <label><input type="radio" name="infusion" value="ritual_sombrio"> ritual_sombrio</label><br>
+            <label><input type="radio" name="infusion" value="descarga_cristal"> descarga_cristal</label>
+        </fieldset>
+        <fieldset>
+            <legend>Catalizadores</legend>
+            <label><input type="checkbox" name="catalizadores[]" value="sal_lagrimas"> sal_lagrimas</label><br>
+            <label><input type="checkbox" name="catalizadores[]" value="alcohol_basilisco"> alcohol_basilisco</label><br>
+            <label><input type="checkbox" name="catalizadores[]" value="hielo_eterno"> hielo_eterno</label><br>
+            <label><input type="checkbox" name="catalizadores[]" value="salmuera_bruja"> salmuera_bruja</label><br>
+            <label><input type="checkbox" name="catalizadores[]" value="eter_etereo"> eter_etereo</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>Cantidad de pociones</legend>
+        <label>Cantidad de pociones: 
+            <input type="number" name="cantidad" value="1" required>
+        </label>
+        </fieldset>
+        <br>
+        <input type="submit" value="Calcular Precio">
+
+
+        </form>
+    
+</body>
+</html>
