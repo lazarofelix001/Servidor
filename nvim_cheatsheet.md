@@ -27,11 +27,11 @@
 
 | Comando | Acción |
 |---------|--------|
-| `"+yy` | Copiar línea actual al portapapeles |
-| `"+5yy` | Copiar 5 líneas al portapapeles |
-| `"+y` | Copiar selección al portapapeles (en modo Visual) |
-| `"+p` | Pegar desde el portapapeles |
-| `"+P` | Pegar ANTES del cursor |
+| `,+yy` | Copiar línea actual al portapapeles |
+| `,+5yy` | Copiar 5 líneas al portapapeles |
+| `,+y` | Copiar selección al portapapeles (en modo Visual) |
+| `,+p` | Pegar desde el portapapeles |
+| `,+P` | Pegar ANTES del cursor |
 
 ### En el portapapeles interno de Vim:
 
