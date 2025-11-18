@@ -1,6 +1,6 @@
 <?php
   class ventana {
-  private $abierta
+  private $abierta;
 
 
   public function __construct(){
