@@ -27,11 +27,11 @@
 
 | Comando | Acción |
 |---------|--------|
-| `,+yy` | Copiar línea actual al portapapeles |
-| `,+5yy` | Copiar 5 líneas al portapapeles |
-| `,+y` | Copiar selección al portapapeles (en modo Visual) |
-| `,+p` | Pegar desde el portapapeles |
-| `,+P` | Pegar ANTES del cursor |
+| `"+yy` | Copiar línea actual al portapapeles |
+| `"+5yy` | Copiar 5 líneas al portapapeles |
+| `"+y` | Copiar selección al portapapeles (en modo Visual) |
+| `"+p` | Pegar desde el portapapeles |
+| `"+P` | Pegar ANTES del cursor |
 
 ### En el portapapeles interno de Vim:
 
@@ -101,6 +101,118 @@
 | `Space+gd` | Ir a **definición** |
 | `Space+gr` | Ver **referencias** |
 | `Space+ca` | **Code actions** (acciones rápidas) |
+
+---
+
+## 🐘 PHPTools (Desarrollo PHP)
+
+**⚠️ Nota:** Estos atajos solo funcionan en archivos `.php`
+
+### Generación de Código:
+
+| Atajo | Acción | Ejemplo de uso |
+|-------|--------|----------------|
+| `Space+lm` | **Generar método** indefinido | Creas `$this->getUserData()` y genera el método |
+| `Space+lc` | **Crear clase/trait/interface** | Menú para crear nuevas estructuras |
+| `Space+lg` | **Generar getters/setters** | Selecciona propiedades y genera métodos automáticamente |
+| `Space+ln` | **Generar namespace** | Añade el namespace correcto según la ruta del archivo |
+| `Space+lf` | **Crear entidad PHP** | Crea archivo completo (clase, interface, trait, enum) |
+
+### Herramientas Laravel/Composer:
+
+| Atajo | Acción |
+|-------|--------|
+| `Space+ls` | **Scripts de Composer** | Lista y ejecuta scripts definidos en composer.json |
+
+### Refactorización:
+
+| Atajo | Modo | Acción |
+|-------|------|--------|
+| `Space+lr` | Visual | **Refactorizar código** seleccionado |
+
+### Drupal (si trabajas con Drupal):
+
+| Atajo | Acción |
+|-------|--------|
+| `Space+ld` | **Drupal AutoLoader** | Carga automática de clases Drupal |
+
+---
+
+## 💡 Ejemplos Prácticos de PHPTools
+
+### 1. Generar un método que falta:
+
+```php
+// Tienes esto en tu código:
+public function index()
+{
+    $data = $this->processUserData(); // ← Método no existe aún
+}
+
+// 1. Pon el cursor sobre "processUserData"
+// 2. Presiona: Space+lm
+// 3. Se genera automáticamente:
+private function processUserData()
+{
+    // TODO: Implement method
+}
+```
+
+### 2. Crear getters y setters:
+
+```php
+// Tienes estas propiedades:
+class User {
+    private string $name;
+    private string $email;
+    private int $age;
+}
+
+// 1. Presiona: Space+lg
+// 2. Selecciona las propiedades que quieres
+// 3. Se generan automáticamente:
+public function getName(): string { return $this->name; }
+public function setName(string $name): void { $this->name = $name; }
+// ... etc
+```
+
+### 3. Generar namespace correcto:
+
+```php
+// Archivo: src/Services/PaymentService.php
+// Sin namespace todavía
+
+// 1. Presiona: Space+ln
+// 2. Se añade automáticamente:
+<?php
+
+namespace App\Services;
+
+class PaymentService {
+    // ...
+}
+```
+
+### 4. Crear una nueva clase completa:
+
+```
+// 1. Presiona: Space+lf
+// 2. Elige tipo: Class, Interface, Trait, o Enum
+// 3. Escribe el nombre
+// 4. Se crea el archivo completo con namespace y estructura básica
+```
+
+### 5. Ejecutar scripts de Composer:
+
+```
+// 1. Presiona: Space+ls
+// 2. Aparece un menú con tus scripts:
+//    - test
+//    - phpstan
+//    - format
+//    - etc.
+// 3. Selecciona uno y se ejecuta
+```
 
 ---
 
