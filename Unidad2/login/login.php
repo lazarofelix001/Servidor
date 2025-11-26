@@ -1,44 +1,24 @@
 <?php
-// Map de usuarios con email, nombre y contraseña
-$usuarios = [
-    "juan@example.com" => [
-        "nombre" => "Juan Pérez",
-        "password" => "password123"
-    ],
-    "maria@example.com" => [
-        "nombre" => "María García",
-        "password" => "maria2023"
-    ],
-    "pedro@example.com" => [
-        "nombre" => "Pedro López",
-        "password" => "lopezPedro321"
-    ],
-    "laura@example.com" => [
-        "nombre" => "Laura Martínez",
-        "password" => "lauraPass456"
-    ],
-    "carlos@example.com" => [
-        "nombre" => "Carlos Fernández",
-        "password" => "fernandez2022"
-    ],
-    "ana@example.com" => [
-        "nombre" => "Ana Gómez",
-        "password" => "gomezAna789"
-    ],
-    "david@example.com" => [
-        "nombre" => "David Torres",
-        "password" => "david987"
-    ],
-    "sofia@example.com" => [
-        "nombre" => "Sofía Sánchez",
-        "password" => "sofia456"
-    ],
-    "luis@example.com" => [
-        "nombre" => "Luis Ramírez",
-        "password" => "ramirezLuis234"
-    ],
-    "elena@example.com" => [
-        "nombre" => "Elena Castillo",
-        "password" => "elenaCastillo678"
-    ]
-];
+session_start();
+
+require_once ('./usuarios.php');
+
+$email = $_POST['email'];
+$password = $_POST['password'];
+$inicio= false;
+function inicioSecion($map,$email){
+  $_SESSION['usuario'] = $map[$email]['nombre'];
+  header('Location: ./hola.php');
+
+}
+foreach ($usuarios as $key => $usuario) {
+  if ($key === $email && $usuario['password'] === $password) {
+    $inicio = true;
+  }
+}
+if ($inicio == true) {
+  inicioSecion($usuarios, $email);
+} else {
+  echo 'inicio fallido, verifique los datos.';
+  echo '<br><a href="./login.html">Volver al formulario</a>';
+}
